@@ -70,7 +70,13 @@ XENSTOREDLIBS = \
 	-ccopt -L -ccopt $(OCAML_TOPLEVEL)/libs/xc $(OCAML_TOPLEVEL)/libs/xc/xenctrl.cmxa \
 	-ccopt -L -ccopt $(OCAML_TOPLEVEL)/libs/xb $(OCAML_TOPLEVEL)/libs/xb/xenbus.cmxa \
 	-ccopt -L -ccopt $(OCAML_TOPLEVEL)/libs/xsd_glue $(OCAML_TOPLEVEL)/libs/xsd_glue/plugin_interface_v1.cmxa \
-	-ccopt -L -ccopt $(XEN_ROOT)/tools/libs/ctrl
+	-ccopt -L -ccopt $(OCAML_TOPLEVEL)/libs/xsd_glue/domain_getinfo_plugin_v1 $(OCAML_TOPLEVEL)/libs/xsd_glue/domain_getinfo_plugin_v1/domain_getinfo_v1.cmxa \
+	-ccopt -L -ccopt $(XEN_ROOT)/tools/libs/ctrl \
+	-cclib $(XEN_ROOT)/tools/libs/call/libxencall.a \
+	-cclib $(XEN_ROOT)/tools/libs/foreignmemory/libxenforeignmemory.a \
+	-cclib $(XEN_ROOT)/tools/libs/devicemodel/libxendevicemodel.a \
+	-cclib $(XEN_ROOT)/tools/libs/toolcore/libxentoolcore.a \
+	-cclib $(XEN_ROOT)/tools/libs/toollog/libxentoollog.a
 
 PROGRAMS = oxenstored
 
